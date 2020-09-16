@@ -12,7 +12,10 @@ segment_cor(vec, n)
 \item{n}{length of duplicate sequence to search for}
 }
 \description{
-segment_cor
+Finds correlation between all segments length n of a vector
+}
+\details{
+Embeds the vector into low-dimensional Euclidean space and then finds correlation between all columns. Pairs of columns with a correlation of 1 are either duplicates or have an offset.
 }
 \examples{
 set.seed(42) 
