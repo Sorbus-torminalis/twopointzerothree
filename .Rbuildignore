@@ -1,3 +1,5 @@
 twopointzerothree.Rproj
 README.Rmd
 LICENSE
+^.*\.Rproj$
+^\.Rproj\.user$

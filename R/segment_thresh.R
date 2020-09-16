@@ -13,9 +13,9 @@
 #' @export
 
 segment_thresh <- function(seg, 
-                           threshold, 
+                           threshold = 1, 
                            tolerance = sqrt(.Machine$double.eps)){ 
-  if(tolerance < 1){
+  if(tolerance < 0){
     stop("tolerance must be positive")
   }
   if(threshold < -1 | threshold > 1){

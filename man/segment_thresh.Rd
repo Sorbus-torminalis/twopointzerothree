@@ -4,7 +4,7 @@
 \alias{segment_thresh}
 \title{Threshold segment correlations}
 \usage{
-segment_thresh(seg, threshold, tolerance = sqrt(.Machine$double.eps))
+segment_thresh(seg, threshold = 1, tolerance = sqrt(.Machine$double.eps))
 }
 \arguments{
 \item{seg}{Output of \code{\link[=segment_cor]{segment_cor()}}}

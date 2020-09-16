@@ -19,8 +19,8 @@ segment_longest <- function(vec, min = 3, max = NULL, ...){
   th <- list()
   for(n in min:max){
     co <- segment_cor(vec, n = n)
-    th[n] <- segment_thresh(co, ...)
-    if(!any(th)){
+    th[[n]] <- segment_thresh(co, ...)
+    if(!any(th[[n]], na.rm = TRUE)){
       break
     }
   }
