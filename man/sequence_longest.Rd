@@ -24,6 +24,6 @@ Loops to find the longest possible sequence of (offset) duplicate values.
 \examples{
 set.seed(42) 
 x <- rnorm(10)
-x <- c(x, x[1:4])
-segment_longest(vec = x)    
+x <- c(x, x[1:4] + 2.03)
+sequence_longest(vec = x)    
 }

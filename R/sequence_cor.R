@@ -6,8 +6,8 @@
 #' @examples
 #' set.seed(42) 
 #' x <- rnorm(10)
-#' x <- c(x, x[1:4])
-#' segment_cor(vec = x, n = 4)
+#' x <- c(x, x[1:4] + 2.03)
+#' sequence_cor(vec = x, n = 4)
 #' @importFrom stats cor embed
 #'    
 #' @export
@@ -23,5 +23,6 @@ sequence_cor <- function(vec, n){
   em <- embed(vec, length(vec) - n + 1) 
   co <- cor(em)
   diag(co) <- NA
+  attr(co, "len") <- n
   co
 } 

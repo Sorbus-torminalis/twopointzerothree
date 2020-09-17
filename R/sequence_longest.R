@@ -8,21 +8,24 @@
 #' @examples
 #' set.seed(42) 
 #' x <- rnorm(10)
-#' x <- c(x, x[1:4])
-#' segment_longest(vec = x)    
+#' x <- c(x, x[1:4] + 2.03)
+#' sequence_longest(vec = x)    
 #' @export
 
 sequence_longest <- function(vec, min = 3, max = NULL, ...){ 
   if(is.null(max)){
     max <- length(vec) - 1
   }
-  th <- list()
+  th <- logical()
   for(n in min:max){
+    th0 <- th#grab last good
     co <- sequence_cor(vec, n = n)
-    th[[n]] <- sequence_thresh(co, ...)
-    if(!any(th[[n]], na.rm = TRUE)){
+    th <- sequence_thresh(co, ...)
+    if(!any(th, na.rm = TRUE)){
       break
     }
   }
-  th
+  attr(th0, "longest") <- n - 1
+  message("longest duplicate length = ", n - 1)
+  th0
 } 

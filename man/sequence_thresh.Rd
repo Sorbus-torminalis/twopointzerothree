@@ -17,12 +17,12 @@ sequence_thresh(sequ, threshold = 1, tolerance = sqrt(.Machine$double.eps))
 Thresholds correlation between all segments length n of a vector
 }
 \details{
-Tests if correlations are >= than a given threshold.
+Tests if correlations are >= than a given threshold (with tolerance for imprecision in correlations). Default threshold is 1 (perfect correlation). Might be useful to reduce this slightly, or equivalently increase tolerance to allow for cases where imprecision is high.
 }
 \examples{
 set.seed(42) 
 x <- rnorm(10)
-x <- c(x, x[1:4])
-seg <- segment_cor(vec = x, n = 4)
-segment_thresh(seg)    
+x <- c(x, x[1:4] + 2.03)
+sequ <- sequence_cor(vec = x, n = 4)
+sequence_thresh(sequ)    
 }

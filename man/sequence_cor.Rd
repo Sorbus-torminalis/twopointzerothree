@@ -20,6 +20,6 @@ Embeds the vector into low-dimensional Euclidean space and then finds correlatio
 \examples{
 set.seed(42) 
 x <- rnorm(10)
-x <- c(x, x[1:4])
-segment_cor(vec = x, n = 4)
+x <- c(x, x[1:4] + 2.03)
+sequence_cor(vec = x, n = 4)
 }
