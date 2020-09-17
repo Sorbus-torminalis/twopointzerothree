@@ -12,14 +12,14 @@
 #' segment_longest(vec = x)    
 #' @export
 
-segment_longest <- function(vec, min = 3, max = NULL, ...){ 
+sequence_longest <- function(vec, min = 3, max = NULL, ...){ 
   if(is.null(max)){
     max <- length(vec) - 1
   }
   th <- list()
   for(n in min:max){
-    co <- segment_cor(vec, n = n)
-    th[[n]] <- segment_thresh(co, ...)
+    co <- sequence_cor(vec, n = n)
+    th[[n]] <- sequence_thresh(co, ...)
     if(!any(th[[n]], na.rm = TRUE)){
       break
     }

@@ -2,7 +2,7 @@ test_that("finds duplicates", {
   set.seed(42) 
   x <- rnorm(10)
 
-  s1 <- segment_cor(vec = x, n = 4) 
+  s1 <- sequence_cor(vec = x, n = 4) 
   
   #no duplicate
   expect_lt(max(s1, na.rm = TRUE), 1)

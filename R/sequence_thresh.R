@@ -1,6 +1,6 @@
 #' Threshold segment correlations
 #' @description Thresholds correlation between all segments length n of a vector
-#' @param seg Output of [twopointzerothree::segment_cor()]
+#' @param sequ Output of [twopointzerothree::sequence_cor()]
 #' @param threshold Minimum correlation to accept. Defaults to 1, possible range -1 to 1 (but values much below 1 make no sense)
 #' @param tolerance Small positive number to allow for numerical imprecision
 #' @details Tests if correlations are >= than a given threshold. 
@@ -12,7 +12,7 @@
 #' segment_thresh(seg)    
 #' @export
 
-segment_thresh <- function(seg, 
+sequence_thresh <- function(sequ, 
                            threshold = 1, 
                            tolerance = sqrt(.Machine$double.eps)){ 
   if(tolerance < 0){
@@ -22,5 +22,5 @@ segment_thresh <- function(seg,
     stop("thresh must be between -1 and 1 
          (only values close to 1 make sense)")
   }
-  seg + tolerance >= threshold
+  sequ + tolerance >= threshold
 } 

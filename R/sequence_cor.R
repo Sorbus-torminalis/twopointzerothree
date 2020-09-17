@@ -12,7 +12,7 @@
 #'    
 #' @export
 
-segment_cor <- function(vec, n){ 
+sequence_cor <- function(vec, n){ 
   if(!is.numeric(vec)){
     stop("vec must be numeric")
   }
