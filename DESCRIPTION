@@ -18,4 +18,7 @@ Suggests:
     testthat
 Imports: 
     plyr,
-    tibble
+    tibble,
+    rlang
+Depends: 
+    R (>= 2.10)

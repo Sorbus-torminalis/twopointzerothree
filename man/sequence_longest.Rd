@@ -13,7 +13,7 @@ sequence_longest(vec, min = 3, max = NULL, ...)
 
 \item{max}{Maximum length sequence to search for. If \code{NULL}, finds longest possible.}
 
-\item{...}{arguments to \link{segment_thresh}}
+\item{...}{arguments to \link{sequence_thresh}}
 }
 \description{
 Finds the longest sequence of (offset) duplicate values

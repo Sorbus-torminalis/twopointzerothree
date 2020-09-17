@@ -9,7 +9,7 @@ test_that("finds duplicates", {
   
   #duplicate sequence
   x2 <- c(x, x[1:4] + 2.03)#with offset duplicate
-  s2 <- segment_cor(vec = x2, n = 4) 
+  s2 <- sequence_cor(vec = x2, n = 4) 
   expect_equal(max(s2, na.rm = TRUE), 1)
   
 })
