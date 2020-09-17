@@ -19,8 +19,10 @@ sequence_cor <- function(vec, n){
   if(length(vec) <= n){
     stop("vec must be longer than n")
   }
-  
+  #embed
   em <- embed(vec, length(vec) - n + 1) 
+  #reverse col order
+  em <- em[, ncol(em):1]
   co <- cor(em)
   diag(co) <- NA
   attr(co, "len") <- n
