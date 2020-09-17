@@ -10,6 +10,7 @@
 #' co <- sequence_cor(vec = x, n = 3) 
 #' th <- sequence_thresh(co)
 #' sequence_extract(th, vec = x)
+#' @importFrom rlang .data
 #' @export
 
 sequence_extract <- function(th, vec){
@@ -18,9 +19,9 @@ sequence_extract <- function(th, vec){
   n <- attr(th, "len")
   plyr::adply(dups, 1, function(pos){
     tibble(pos1 = pos[1]:(pos[1] + n - 1),
-           vec1 = vec[pos1],
+           vec1 = vec[.data$pos1],
            pos2 = pos[2]:(pos[2] + n - 1),
-           vec2 = vec[pos2], 
-           delta = vec2 - vec2)
+           vec2 = vec[.data$pos2], 
+           delta = .data$vec2 - .data$vec1)
   }, .id = "duplicate_no") 
 }

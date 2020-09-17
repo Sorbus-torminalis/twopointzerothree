@@ -2,9 +2,11 @@
 
 export(sequence_cor)
 export(sequence_extract)
+export(sequence_find)
 export(sequence_longest)
 export(sequence_thresh)
 importFrom(plyr,adply)
+importFrom(rlang,.data)
 importFrom(stats,cor)
 importFrom(stats,embed)
 importFrom(tibble,tibble)
