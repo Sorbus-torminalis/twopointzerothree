@@ -32,12 +32,12 @@ These repeat sequences are either duplicates or offset duplicates.
 remotes::install_github("Sorbus-torminalis/twopointzerothree.git")
 ```
 
-`twopointzerothree` requires a vector of numbers as input and the maximum length of duplicate to search for (`sequence_longest` can report the length of the longest). 
+`twopointzerothree` requires a vector of numbers as input. 
 
 ```{r example}
 library(twopointzerothree)
 data("kp2014")# part of the data from Keiser & Pruitt 2014
-sequence_find(vec = kp2014$`Theridion murarium Aggressiveness...4`, max = 9)
+sequence_find_all(vec = kp2014$`Theridion murarium Aggressiveness...4`)
 ```
 
 The result give the position and values of the first and second sets of duplicated values and any offset.
@@ -45,20 +45,20 @@ The result give the position and values of the first and second sets of duplicat
 If data in several columns need to be checked, they should be appended into one vector.
 
 ```{r example2}
-sequence_find(
+sequence_find_all(
   vec = c(kp2014$`Theridion murarium Aggressiveness...4`,
           kp2014$`Theridion murarium Aggressiveness...5`,
-          kp2014$`Theridion murarium Aggressiveness...6`),
-  max = 9)
+          kp2014$`Theridion murarium Aggressiveness...6`))
 ```
 
 ## Notes
 
-`twopointzerothree` will report the longest sequence of duplicates sequences it can find that are at most `max` elements long.
-To find shorter sequences, reduce `max`.
-If `max` is less than the length of the longest sequence, it `sequence_find` will return overlapping sequences.
+`twopointzerothree` will report the all the duplicate sequences it can find.
 
 `twopointzerothree` will not report sequences of identical values as duplicates as `cor(rep(1, 3), rep(2, 3))` returns NA.
+
+If very short sequences (e.g. length 3) are searched for, there is a high risk of false positives. 
+These can be identified by having offset values that are not consistent.
 
 `twopointzerothree` reports duplicate values.
 It does not report why. 

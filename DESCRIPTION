@@ -19,6 +19,7 @@ Suggests:
 Imports: 
     plyr,
     tibble,
-    rlang
+    rlang,
+    dplyr
 Depends: 
     R (>= 2.10)

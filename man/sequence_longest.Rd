@@ -4,14 +4,14 @@
 \alias{sequence_longest}
 \title{Find longest duplicate sequence}
 \usage{
-sequence_longest(vec, min = 3, max = NULL, ...)
+sequence_longest(vec, min = 4, max, ...)
 }
 \arguments{
 \item{vec}{Numeric vector to test for (offset) duplicate values}
 
-\item{min}{Minimum length sequence to search for.}
+\item{min}{Minimum length sequence to search for. Recommend at least 4 to avoid false positives}
 
-\item{max}{Maximum length sequence to search for. If \code{NULL}, finds longest possible.}
+\item{max}{Maximum length sequence to search for. If missing, finds longest possible.}
 
 \item{...}{arguments to \link{sequence_thresh}}
 }

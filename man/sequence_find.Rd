@@ -4,19 +4,19 @@
 \alias{sequence_find}
 \title{Find and extract duplicate sequences}
 \usage{
-sequence_find(vec, max)
+sequence_find(vec, n)
 }
 \arguments{
 \item{vec}{vector with possible duplicates}
 
-\item{max}{longest sequence sought}
+\item{n}{length of sequence sought}
 }
 \description{
 Find and extract duplicate sequences
 }
 \examples{
-#' set.seed(42) 
+set.seed(42) 
 x <- rnorm(10)
 x <- c(x, x[1:4] + 2.03)
-sequence_find(vec = x, max = 5)
+sequence_find(vec = x, n = 5)
 }

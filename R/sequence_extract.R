@@ -17,11 +17,22 @@ sequence_extract <- function(th, vec){
   dups <- which(th, arr.ind = TRUE)
   dups <- dups[dups[, "row"] < dups[, "col"], , drop = FALSE]
   n <- attr(th, "len")
-  plyr::adply(dups, 1, function(pos){
-    tibble(pos1 = pos[1]:(pos[1] + n - 1),
-           vec1 = vec[.data$pos1],
-           pos2 = pos[2]:(pos[2] + n - 1),
-           vec2 = vec[.data$pos2], 
-           delta = .data$vec2 - .data$vec1)
-  }, .id = "duplicate_no") 
-}
+  if(nrow(dups) == 0){
+    tibble(length = numeric(),
+           pos1 = integer(),
+           vec1 = numeric(),
+           pos2 = integer(),
+           vec2 = numeric(), 
+           delta = numeric())
+    
+  } else{
+    plyr::adply(dups, 1, function(pos){
+      tibble(length = n,
+             pos1 = pos[1]:(pos[1] + n - 1),
+             vec1 = vec[.data$pos1],
+             pos2 = pos[2]:(pos[2] + n - 1),
+             vec2 = vec[.data$pos2], 
+             delta = .data$vec2 - .data$vec1)
+    }, .id = "duplicate_no") 
+  }
+}  
