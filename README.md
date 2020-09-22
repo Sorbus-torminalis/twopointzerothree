@@ -102,6 +102,12 @@ sequence_find_all(
 #> 32            6      7   86 143.36  133 145.68  2.32
 ```
 
+To see the duplicate sequences in situ, use `sequence_show`.
+
+``` r
+sequence_show(kp2014, meta_cols = 1:3, test_cols = starts_with("Theridion"))
+```
+
 ## Notes
 
 `twopointzerothree` will report the all the duplicate sequences it can

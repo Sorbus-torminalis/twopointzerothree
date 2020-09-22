@@ -50,6 +50,12 @@ sequence_find_all(
           kp2014$`Theridion murarium Aggressiveness...5`,
           kp2014$`Theridion murarium Aggressiveness...6`))
 ```
+To see the duplicate sequences in situ, use `sequence_show`.
+
+```{r, eval = FALSE}
+sequence_show(kp2014, meta_cols = 1:3, test_cols = starts_with("Theridion"))
+```
+
 
 ## Notes
 
