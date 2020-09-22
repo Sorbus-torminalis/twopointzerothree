@@ -15,6 +15,9 @@ sequence_find_all <- function(vec, min = 4, max){
   if(missing(max)){
     max <- sequence_longest(vec = vec, min = min, max = max)
   }
+  if(is.na(max)){#no dups found
+    max <- min
+  }
   results <- list()
   for(n in max:min){
     results[[max - n + 1]] <- sequence_find(vec = vec, n = n)
