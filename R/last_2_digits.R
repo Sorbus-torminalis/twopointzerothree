@@ -62,12 +62,13 @@ last2_diff_test <- function(x, n = 100){
 #' @description autoplot function for result of last2_diff_test
 #' @param x last2 object
 #' @param ci quantile of null distribution to plot.
-#' @importFrom ggplot2 ggplot aes geom_col scale_x_continuous geom_ribbon labs
+#' @importFrom ggplot2 ggplot aes geom_col scale_x_continuous geom_ribbon labs autoplot
 #' @importFrom dplyr mutate group_by summarise
 #' @importFrom tibble enframe
 #' @importFrom rlang .data
 #' @importFrom purrr map_df
 #' @importFrom stats quantile
+#' @export
 
 autoplot.last2 <- function(x, ci = 0.95){
   #ribbon showing null distribution
