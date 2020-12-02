@@ -24,6 +24,8 @@ Imports:
     tidyr,
     tidyselect,
     DT,
-    grDevices
+    grDevices,
+    purrr,
+    ggplot2
 Depends: 
     R (>= 2.10)
