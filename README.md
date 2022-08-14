@@ -28,7 +28,7 @@ duplicates.
 `twopointzerothree` can be installed with
 
 ``` r
-remotes::install_github("Sorbus-torminalis/twopointzerothree.git")
+remotes::install_github("Sorbus-torminalis/twopointzerothree")
 ```
 
 `twopointzerothree` requires a vector of numbers as input.
